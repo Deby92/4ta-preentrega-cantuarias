@@ -26,9 +26,10 @@ function mostrarCarrito() {
 
     listaProductos.innerHTML = '';
     carritoElement.innerHTML = '';
-    listaProductos.style.display = 'grid';
-    listaProductos.style.gridTemplateColumns = 'repeat(2, 1fr)';
-    listaProductos.style.gap = '20px';
+    carritoElement.style.display = 'grid';
+    carritoElement.style.gridTemplateColumns = 'repeat(2, 1fr)';
+    carritoElement.style.gap = '20px';
+    
 
     productos.forEach((producto, index) => {
         const listItem = document.createElement('li');
@@ -36,10 +37,20 @@ function mostrarCarrito() {
         const imagenProducto = document.createElement('img');
         imagenProducto.src = producto.imagen;
         imagenProducto.alt = producto.nombre;
+        
         listItem.appendChild(imagenProducto);
 
         listItem.addEventListener('click', () => agregarAlCarrito(producto));
         listaProductos.appendChild(listItem);
+
+        // Establecer el tamaño de la imagen para que todas tengan el mismo tamaño
+        imagenProducto.style.width = '100%';
+        imagenProducto.style.height = 'auto';
+
+        listItem.appendChild(imagenProducto);
+
+        listItem.addEventListener('click', () => eliminarDelCarrito(index));
+        carritoElement.appendChild(listItem);
     });
 
     carrito.forEach((producto, index) => {
@@ -49,11 +60,7 @@ function mostrarCarrito() {
         imagenProducto.src = producto.imagen;
         imagenProducto.alt = producto.nombre;
         listItem.appendChild(imagenProducto);
-        imagenProducto.style.width = '100%';
-        imagenProducto.style.height = 'auto';
 
-        listItem.appendChild(imagenProducto);
-        
         listItem.addEventListener('click', () => eliminarDelCarrito(index));
         carritoElement.appendChild(listItem);
         listItem.addEventListener('click', () => eliminarDelCarrito(index));
