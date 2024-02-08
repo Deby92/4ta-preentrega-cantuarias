@@ -3,45 +3,52 @@
       {
         "nombre": "Juguete para perro",
         "tipo": "Juguete",
-        "precio": "5000"
+        "precio": "5.000",
+        "imagen": "/images/juguete-perro.jpg"
       },
       {
         "nombre": "Comida para gato 10kl.",
         "tipo": "Comida",
         "para": "Gato",
         "peso": "10 kl.",
-        "precio": "25000"
+        "precio": "25.000",
+        "imagen": "/images/comida-gato.png"
       },
       {
         "nombre": "Collar para perro",
         "tipo": "Collar",
         "para": "Perro",
-        "precio": "10000"
+        "precio": "10.000",
+        "imagen": "/images/collar-perro.jpeg"
       },
       {
         "nombre": "Snack para perro",
         "tipo": "Snack",
         "para": "Perro",
-        "precio": "7000"
+        "precio": "7.000",
+        "imagen": "/images/snack-perro.jpeg"
       },
       {
         "nombre": "Rascador para gato",
         "tipo": "Rascador",
         "para": "Gato",
-        "precio": "30000"
+        "precio": "30.000",
+        "imagen": "/images/rascador.jpeg"
       },
       {
         "nombre": "Bebedero para gato",
         "tipo": "Bebedero",
         "para": "Gato",
-        "precio": "67500"
+        "precio": "67.500",
+        "imagen": "/images/bebedero-gato.jpeg"
       },
       {
         "nombre": "Comida para pajaros 2kl.",
         "tipo": "Comida",
         "para": "Pájaros",
         "peso": "2 kl.",
-        "precio": "9200"
+        "precio": "9.200",
+        "imagen": "/images/comida-pajaros.jpeg"
       }
     ]
   }
