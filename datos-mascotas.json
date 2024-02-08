@@ -1,0 +1,47 @@
+{
+    "productos": [
+      {
+        "nombre": "Juguete para perro",
+        "tipo": "Juguete",
+        "precio": "5000"
+      },
+      {
+        "nombre": "Comida para gato 10kl.",
+        "tipo": "Comida",
+        "para": "Gato",
+        "peso": "10 kl.",
+        "precio": "25000"
+      },
+      {
+        "nombre": "Collar para perro",
+        "tipo": "Collar",
+        "para": "Perro",
+        "precio": "10000"
+      },
+      {
+        "nombre": "Snack para perro",
+        "tipo": "Snack",
+        "para": "Perro",
+        "precio": "7000"
+      },
+      {
+        "nombre": "Rascador para gato",
+        "tipo": "Rascador",
+        "para": "Gato",
+        "precio": "30000"
+      },
+      {
+        "nombre": "Bebedero para gato",
+        "tipo": "Bebedero",
+        "para": "Gato",
+        "precio": "67500"
+      },
+      {
+        "nombre": "Comida para pajaros 2kl.",
+        "tipo": "Comida",
+        "para": "Pájaros",
+        "peso": "2 kl.",
+        "precio": "9200"
+      }
+    ]
+  }
