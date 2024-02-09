@@ -71,7 +71,7 @@ function mostrarCostoTotal() {
     }, 0);
 
     const costoTotalElement = document.getElementById('costoTotal');
-    costoTotalElement.textContent = `Costo total del carrito: ${costoTotal} pesos`;
+    costoTotalElement.textContent = `Costo total del carrito: ${costoTotal.toFixed(3)} pesos`;
 
 
     if (carrito.length > 0 && costoTotal > 0) {
