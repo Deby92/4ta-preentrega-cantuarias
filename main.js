@@ -1,20 +1,18 @@
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let productos = [];
+
 function agregarAlCarrito(producto) {
-    producto.precio = parseFloat(producto.precio);
-    carrito.push(producto);
+    const productoCopiado = {...producto};
+    productoCopiado.precio = parseFloat(productoCopiado.precio);
+    carrito.push(productoCopiado);
     mostrarCarrito();
     actualizarLocalStorage();
-    mostrarCostoTotal();
-
-    mostrarCostoTotalBtn.disabled = false;
 }
 
 function eliminarDelCarrito(index) {
     carrito.splice(index, 1);
     mostrarCarrito();
     actualizarLocalStorage();
-    mostrarCostoTotal();
-
-    mostrarCostoTotalBtn.disabled = carrito.length === 0;
 }
 
 function mostrarCarrito() {
@@ -29,7 +27,6 @@ function mostrarCarrito() {
     carritoElement.style.display = 'grid';
     carritoElement.style.gridTemplateColumns = 'repeat(2, 1fr)';
     carritoElement.style.gap = '20px';
-    
 
     productos.forEach((producto, index) => {
         const listItem = document.createElement('li');
@@ -37,24 +34,22 @@ function mostrarCarrito() {
         const imagenProducto = document.createElement('img');
         imagenProducto.src = producto.imagen;
         imagenProducto.alt = producto.nombre;
-        
+
         listItem.appendChild(imagenProducto);
 
-        listItem.addEventListener('click', () => agregarAlCarrito(producto));
+        listItem.addEventListener('click', () => {
+            agregarAlCarrito(producto);
+        });
         listaProductos.appendChild(listItem);
 
         imagenProducto.style.width = '100%';
         imagenProducto.style.height = 'auto';
 
-        listItem.appendChild(imagenProducto);
-
-        listItem.addEventListener('click', () => eliminarDelCarrito(index));
-        carritoElement.appendChild(listItem);
     });
 
     carrito.forEach((producto, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${producto.nombre} - ${producto.precio} pesos`;
+        listItem.textContent = `${producto.nombre} - ${producto.precio.toFixed(3)} pesos`;
         const imagenProducto = document.createElement('img');
         imagenProducto.src = producto.imagen;
         imagenProducto.alt = producto.nombre;
@@ -76,21 +71,36 @@ function mostrarCostoTotal() {
     }, 0);
 
     const costoTotalElement = document.getElementById('costoTotal');
-    costoTotalElement.textContent = `Costo total del carrito: ${costoTotal} pesos`; 
-    const mostrarCostoTotalBtn = document.getElementById('mostrarCostoTotalBtn');
-    mostrarCostoTotalBtn.disabled = carrito.length === 0;
-    console.log(costoTotalElement.innerHTML);
+    costoTotalElement.textContent = `Costo total del carrito: ${costoTotal} pesos`;
+
+
+    if (carrito.length > 0 && costoTotal > 0) {
+        Swal.fire({
+            title: 'Compra completada!',
+            text: `Total: ${costoTotal.toFixed(3)} pesos`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        }).then(() => {
+            reiniciarCarrito();
+        });
+    }
 }
 
-const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+function reiniciarCarrito() {
+    carrito.length = 0;
+    mostrarCarrito();
+    actualizarLocalStorage();
+}
+document.getElementById('mostrarCostoTotalBtn').addEventListener('click', mostrarCostoTotal);
 
-let productos = [];
+function cargarProductos() {
+    fetch('datos-mascotas.json')
+        .then(response => response.json())
+        .then(data => {
+            productos = data.productos;
+            mostrarCarrito();
+        })
+        .catch(error => console.error('Error al cargar datos:', error));
+}
 
-fetch('datos-mascotas.json')
-    .then(response => response.json())
-    .then(data => {
-        productos = data.productos;
-        mostrarCarrito();
-        mostrarCostoTotal();
-    })
-    .catch(error => console.error('Error al cargar datos:', error));
+cargarProductos();
