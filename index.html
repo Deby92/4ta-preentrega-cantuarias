@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Carrito de Compras</h1>
-    <ul id="lista-productos">
-     
-    </ul>
 
-    <h2>Carrito:</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css" />
+  <title>Document</title>
+</head>
 
-    <ul id="carrito">
-      
-    </ul>
+<body>
+  <div class="container">
+    <section class="productos-disponibles">
+      <h2>Productos Disponibles</h2>
+      <ul id="lista-productos"></ul>
+    </section>
 
-    <button onclick="mostrarCostoTotal()" id="mostrarCostoTotalBtn" disabled>
-      Mostrar Costo Total
-    </button>
-    <div id="costoTotal"></div>
-    <script src="/main.js"></script>
-  </body>
+    <section class="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="carrito"></ul>
+      <p id="costoTotal"></p>
+      <button id="mostrarCostoTotalBtn" disabled>Mostrar Costo Total</button>
+    </section>
+  </div>
+  
+    Mostrar Costo Total
+  </button>
+  <div id="costoTotal"></div>
+  <script src="/main.js"></script>
+</body>
+
 </html>

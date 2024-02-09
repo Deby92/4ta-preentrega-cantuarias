@@ -43,7 +43,6 @@ function mostrarCarrito() {
         listItem.addEventListener('click', () => agregarAlCarrito(producto));
         listaProductos.appendChild(listItem);
 
-        // Establecer el tamaño de la imagen para que todas tengan el mismo tamaño
         imagenProducto.style.width = '100%';
         imagenProducto.style.height = 'auto';
 
@@ -61,8 +60,6 @@ function mostrarCarrito() {
         imagenProducto.alt = producto.nombre;
         listItem.appendChild(imagenProducto);
 
-        listItem.addEventListener('click', () => eliminarDelCarrito(index));
-        carritoElement.appendChild(listItem);
         listItem.addEventListener('click', () => eliminarDelCarrito(index));
         carritoElement.appendChild(listItem);
     });

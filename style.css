@@ -3,3 +3,61 @@ html{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 100%;
+  }
+  
+  .productos-disponibles {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 40%;
+    overflow-y: auto;
+  }
+  
+  .carrito {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 60%;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden; /* Evitar que las imágenes se salgan del contenedor */
+    border: 1px solid #ddd; /* Borde para mejorar la visualización */
+  }
+  
+  img {
+    width: 100%; /* Las imágenes ocuparán el 100% del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  
