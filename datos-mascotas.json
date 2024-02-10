@@ -19,7 +19,7 @@
         "tipo": "Collar",
         "para": "Perro",
         "precio": "10.000",
-        "imagen": "/images/collar-perro.jpeg"
+        "imagen": "/images/collar-perro.jpg"
       },
       {
         "nombre": "Snack para perro",
@@ -48,7 +48,7 @@
         "para": "Pájaros",
         "peso": "2 kl.",
         "precio": "9.200",
-        "imagen": "/images/comida-pajaros.jpeg"
+        "imagen": "/images/comida-pajaro.jpg"
       }
     ]
-  }
+}
