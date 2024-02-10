@@ -30,7 +30,7 @@ function mostrarCarrito() {
 
     productos.forEach((producto, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${producto.nombre} - ${producto.precio} pesos`;
+        listItem.textContent = `${producto.nombre} - $ ${producto.precio} pesos`;
         const imagenProducto = document.createElement('img');
         imagenProducto.src = producto.imagen;
         imagenProducto.alt = producto.nombre;
@@ -49,7 +49,7 @@ function mostrarCarrito() {
 
     carrito.forEach((producto, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${producto.nombre} - ${producto.precio.toFixed(3)} pesos`;
+        listItem.textContent = `${producto.nombre} - $ ${producto.precio.toFixed(3)} pesos`;
         const imagenProducto = document.createElement('img');
         imagenProducto.src = producto.imagen;
         imagenProducto.alt = producto.nombre;

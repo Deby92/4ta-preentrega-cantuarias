@@ -45,7 +45,7 @@ body {
 
 .producto img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -73,7 +73,6 @@ body {
   margin-right: 10px;
 }
 
-/* Estilos para el costo total y el botón */
 #costoTotal {
   font-size: 18px;
   font-weight: bold;
